@@ -1,11 +1,11 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css"
-import Header from './header/Header.jsx'
-import NavBar from './navbar/NavBar.jsx'
+import Header from './Pages/header/Header.jsx'
+import NavBar from './Pages/navbar/NavBar.jsx'
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <NavBar />
     </div>

@@ -1,14 +1,15 @@
 import React from 'react'
 import './NavBarStyle.css'
 
+
 function NavBar() {
     return (
 
                 <div className="Nav-Bar body-font">
-                <a href="" className="text-decoration-none text-black border-inline">Home</a>
-                <a href="" className="text-decoration-none text-black">About</a>
-                <a href="" className="text-decoration-none text-black border-inline">My Blog</a>
-                <a href="" className="text-decoration-none text-black border-right">Contact</a>
+                <a href="" className=" text-decoration-none text-black py-3 px-5 border-inline">myHOMEPAGE</a>
+                <a href="" className="text-decoration-none text-black py-3 px-5">myEXPERIENCE</a>
+                <a href="" className="text-decoration-none text-black py-3 px-5 border-inline">myPHILOSOPHY</a>
+                <a href="" className="text-decoration-none text-black py-3 px-5 border-right">myROUTINES</a>
            
                 <div className="input-group rounded search-button">
                     <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
