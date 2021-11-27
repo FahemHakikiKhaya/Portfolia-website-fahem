@@ -1,0 +1,22 @@
+.title-font{
+    font-family: 'Libre Baskerville', serif; 
+}
+.body-font{
+    font-family: 'Quicksand', sans-serif;
+}
+:root{
+    --border-setup:0.2px solid black;
+}
+.Header{
+    border: var(--border-setup);
+    text-align: center;
+    padding: 50px 0px;
+}
+.Header h1{
+    font-size:90px;
+    font-weight: 900;
+}
+.Header h4{
+    font-size:40px;
+    font-weight: lighter;
+}

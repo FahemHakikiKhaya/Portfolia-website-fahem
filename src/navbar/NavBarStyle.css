@@ -1,0 +1,28 @@
+.Nav-Bar{
+    display:flex;
+    justify-content: center;
+    border-bottom: var(--border-setup);
+    
+}
+.Non-icon{
+    padding: 10px 50px;
+    text-decoration: none;
+    color: black;
+}
+.search-button{
+    width: 15%;
+}
+.Icon-list{
+    border-inline: var(--border-setup);
+}
+.Icon-list a i{
+   margin: 10px;
+   text-decoration: none;
+   color: black;
+}
+.border-inline {
+    border-inline: 0.1px solid black;
+}
+.border-right{
+    border-right: 0.1px solid black;
+}
