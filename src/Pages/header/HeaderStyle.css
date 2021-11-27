@@ -1,8 +1,4 @@
-.title-font{
-    font-family: 'Abril Fatface', cursive;}
-.body-font{
-    font-family: 'Quicksand', sans-serif;
-}
+
 :root{
     --border-setup:0.2px solid black;
 }
@@ -13,7 +9,8 @@
 }
 .Header h1{
     font-size:120px;
-    font-weight: 900;
+    font-weight: 100;
+
 }
 .Header h4{
     font-size:40px;

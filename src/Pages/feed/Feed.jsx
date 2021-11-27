@@ -1,4 +1,7 @@
 import React from 'react'
+import FahemBlokM from '../../database/Pictures/Fahem-BlockM.jpg'
+import './Feed.css'
+import '../../Font.css'
 
 function Feed() {
     return (
@@ -6,7 +9,7 @@ function Feed() {
         <div className="Feed-1 col-7 feed-padding border-end border-dark">
             <div className="Feed-Wrap d-flex border border-1 border-dark">
             <div className="Feed-image w-40">
-            <img src="Fahem-BlockM.jpg" className="w-100" alt=""/>
+            <img src={FahemBlokM} className="w-100" alt=""/>
             </div>
             <div className="Feed-desc w-60">
             <a href="#" className="text-decoration-none text-dark">Do Not Leave Tokyo Before Eating Ramen</a>

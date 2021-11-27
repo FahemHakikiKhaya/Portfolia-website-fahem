@@ -1,5 +1,6 @@
 import React from 'react'
 import './HeaderStyle.css'
+import '../../Font.css'
 
 function Header() {
     return (

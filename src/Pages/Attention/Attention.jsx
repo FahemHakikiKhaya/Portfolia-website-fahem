@@ -1,6 +1,6 @@
 import React from 'react'
 import './Attention.css'
-
+import '../../Font.css'
 
 function Attention() {
     return (
