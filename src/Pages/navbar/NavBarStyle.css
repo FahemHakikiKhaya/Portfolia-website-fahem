@@ -1,8 +1,4 @@
-.title-font{
-    font-family: 'Abril Fatface', cursive;}
-.body-font{
-    font-family: 'Quicksand', sans-serif;
-}
+
 .Nav-Bar{
     display:flex;
     justify-content: center;
@@ -30,4 +26,7 @@
 }
 .border-right{
     border-right: 0.1px solid black;
+}
+.icon-size{
+    font-size: 23px;
 }

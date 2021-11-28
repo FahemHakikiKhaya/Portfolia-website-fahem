@@ -1,19 +1,21 @@
 import React from 'react'
 import FahemBlokM from '../../database/Pictures/Fahem-BlockM.jpg'
 import './Feed.css'
-import '../../Font.css'
+
+
 
 function Feed() {
     return (
         <div className="row Feed py-5">
         <div className="Feed-1 col-7 feed-padding border-end border-dark">
-            <div className="Feed-Wrap d-flex border border-1 border-dark">
-            <div className="Feed-image w-40">
+            <div className="row d-flex mx-5 border border-1 border-dark">
+            <div className="col-7 w-45 px-0 ">
             <img src={FahemBlokM} className="w-100" alt=""/>
             </div>
-            <div className="Feed-desc w-60">
-            <a href="#" className="text-decoration-none text-dark">Do Not Leave Tokyo Before Eating Ramen</a>
-            <a href="#" className="text-decoration-none text-dark"> Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</a>
+            <div className="col-5 d-flex-column w-55 p-5">
+            <p>Nov - 10 - 2021</p>
+            <p className="text-decoration-none text-dark feed-title"><p>Do Not Leave China Before Eating Dimsum</p></p>
+            <p className="text-decoration-none text-dark feed-desc" >A wholesome experience eating dimsum with my friends on the weekend</p>
             </div>
             </div>
         </div>

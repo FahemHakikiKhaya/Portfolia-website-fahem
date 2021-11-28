@@ -18,14 +18,16 @@
     margin-top:25px;
 }
 .Attention-image {
-    background-color: #2776C5;
+    background-color:#D2E8EC;
     width: 100%;
     border: var(--border-setup);
     display: flex;
     justify-content: center;
+
 }
 .Attention-image img{
-    width: 30%;
+    border: 10px solid white;
+    width: 50%;
     margin-block: 150px;
 }
 .Attention-info{
