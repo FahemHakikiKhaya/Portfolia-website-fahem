@@ -4,7 +4,11 @@ import './Feed.css'
 
 
 
-function Feed() {
+function Feed(props) {
+    const {id,image,month,date,year,desc,title} = props.feeds
+    console.log(id)
+  
+  
     return (
         <div className="row Feed py-5">
         <div className="Feed-1 col-7 feed-padding border-end border-dark">

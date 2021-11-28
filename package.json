@@ -15,6 +15,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "json-server":"json-server --watch src/database/feedDb.json --port 2021",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
