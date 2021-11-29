@@ -2,7 +2,7 @@ import React from 'react'
 import './HeaderStyle.css'
 
 
-function Header() {
+function index() {
     return (
         <div>
             <div className="Header">
@@ -14,4 +14,4 @@ function Header() {
     )
 }
 
-export default Header
+export default index

@@ -1,10 +1,10 @@
 import React from 'react'
-import Feed from './Feed';
+import FeedCard from '../../component/feedcard/FeedCard';
 function FeedMap(props) {
 
     const renderFeeds = () => {
         return props.feeds.map((feed) => (
-          <Feed key={feed.id} feed={feed} />
+          <FeedCard key={feed.id} feed={feed} />
         ));
       };
     

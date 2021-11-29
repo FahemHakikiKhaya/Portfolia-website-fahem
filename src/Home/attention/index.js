@@ -1,15 +1,15 @@
 import React,{useState,useEffect} from 'react'
-import Feed from './Feed';
+import AttentionMap from './AttentionMap';
 import axios from '../../utils/axios'
 
-function FeedList() {
-    const [feeds, setFeeds] = useState([])
-    const fetchFeeds = () => {
+function Index() {
+    const [attention, setAttention] = useState([])
+    const fetchAttention = () => {
         axios
-          .get("/feeds")
+          .get("/attentions")
           .then((res) => {
             const { data } = res;
-            setFeeds(data);
+            setAttention(data);
           })
           .catch((error) => {
             alert(error.message);
@@ -17,14 +17,14 @@ function FeedList() {
       };
 
       useEffect(()=>{
-        fetchFeeds();
+        fetchAttention();
       },[])
 
     return (
         <div>
-            <FeedMap feeds = {feeds}/>
+            <AttentionMap attention={attention} />
         </div>
     )
 }
 
-export default FeedList
+export default Index

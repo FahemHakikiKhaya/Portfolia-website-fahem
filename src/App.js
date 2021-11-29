@@ -1,13 +1,13 @@
 import React from 'react'
-import Home from './Pages/Home'
+import Home from './Home'
+import "bootstrap/dist/css/bootstrap.css";
 import './Font.css'
 
 
 function App() {
     return (
-       <div>
-          <Home/> 
-           {/* <Admin/> */}
+       <div className="container">
+          <Home/>
        </div>
         
        

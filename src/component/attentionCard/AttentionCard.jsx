@@ -1,8 +1,11 @@
 import React from 'react'
 import './Attention.css'
-import Song from '../../database/Pictures/LukeChiang-Paragraphs.jpg'
 
-function Attention() {
+
+function AttentionCard(props) {
+
+    
+    
     return (
         <div className="Attention">
            
@@ -10,7 +13,7 @@ function Attention() {
 
             <div className="Attention-content">
             <div className="Attention-image">
-            <img src={Song} alt="Guitar"/>
+            <img src={props.image} alt="Guitar"/>
             </div>
             <div className="Attention-info">
             <h1 className="title-font">Paragraphs - Luke Chiang</h1>
@@ -24,4 +27,4 @@ function Attention() {
     )
 }
 
-export default Attention
+export default AttentionCard
