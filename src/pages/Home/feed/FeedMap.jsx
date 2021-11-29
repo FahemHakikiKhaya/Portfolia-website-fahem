@@ -1,5 +1,5 @@
 import React from 'react'
-import FeedCard from '../../component/feedcard/FeedCard';
+import FeedCard from '../../../component/feedcard/FeedCard';
 function FeedMap(props) {
 
     const renderFeeds = () => {

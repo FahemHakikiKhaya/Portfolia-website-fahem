@@ -1,5 +1,5 @@
 import React from 'react'
-import AttentionCard from '../../component/attentionCard/AttentionCard';
+import AttentionCard from '../../../component/attentionCard/AttentionCard';
 
 function AttentionMap(props) {
     const renderAttention = () => {

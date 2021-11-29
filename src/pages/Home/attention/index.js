@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import AttentionMap from './AttentionMap';
-import axios from '../../utils/axios'
+import axios from '../../../utils/axios'
 
 function Index() {
     const [attention, setAttention] = useState([])

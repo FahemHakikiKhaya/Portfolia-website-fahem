@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import FeedMap from './FeedMap'
-import axios from '../../utils/axios'
+import axios from '../../../utils/axios'
 
 function Index() {
     const [feeds, setFeeds] = useState([])
