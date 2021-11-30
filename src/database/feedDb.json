@@ -14,5 +14,15 @@
         {
             "image":"https://images.genius.com/aeae872a1bf677c9349bf08eee427a7e.1000x1000x1.jpg"
         }
-    ]
+    ],
+    "users": [
+        {
+          "fullName": "Fahem HakikiKhaya",
+          "username": "Fahem",
+          "email": "Fahem@gmail.com",
+          "password": "password",
+          "role": "user",
+          "id": 99
+        }
+      ]
 }
