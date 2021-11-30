@@ -2,7 +2,6 @@ const init = {
     id: 0,
     username: "",
     role: "",
-    berhasil: "Hore",
   };
 
 const authReducer = (state = init , action ) => {
@@ -20,3 +19,5 @@ const authReducer = (state = init , action ) => {
           return state;
       }
 }
+
+export default authReducer

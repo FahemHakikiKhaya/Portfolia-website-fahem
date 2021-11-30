@@ -1,8 +1,10 @@
 import React from 'react'
 import './NavBarStyle.css'
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 function NavBar() {
+    const username = useSelector(state => state.auth.username)
     return (
 
        
@@ -11,7 +13,7 @@ function NavBar() {
                 <Link tag={Link} to="/" className=" text-decoration-none text-black py-3 px-4 border-inline">myHOMEPAGE</Link>
                 <a href="" className="text-decoration-none text-black py-3 px-4">myEXPERIENCE</a>
                 <a href="" className="text-decoration-none text-black py-3 px-4 border-inline">myPHILOSOPHY</a>
-                <Link tag={Link} to="/Login"className="text-decoration-none text-black py-3 px-4 border-right">myAdmin</Link>
+                <Link tag={Link} to="/Login"className="text-decoration-none text-black py-3 px-4 border-right">{username ? `Hello ${username}` : 'loginAdmin'} </Link>
                 
                 {/* <div className="input-group rounded search-button">
                     <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"

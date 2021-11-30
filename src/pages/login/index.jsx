@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react';
 import NavBar from '../../component/navigation/NavBar'
 import './login.css'
 import axios from '../../utils/axios'
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from '../../store/actions';
+import {Navigate} from 'react-router-dom'
 
-function index() {
-    const dispatch = useDispatch()
-    const username = useSelector((state)=>{state.auth.username});
-    const [formState,setFormState] = useState({
-        username="",
-        password=""
-    })
+function Index() {
+    const dispatch = useDispatch();
+    const userName = useSelector((state)=>state.auth.username);
+    const [formState, setFormState] = useState({
+        username: "",
+        password: "",
+      });
+    
 
     const onHandleChange = (e) => {
-        setFormState({...formState,[e.target.name]: e.target.value})
+    setFormState({...formState,[e.target.name]: e.target.value})
     }
+    
 
     const onLoginClick = () => {
         axios
@@ -25,8 +28,12 @@ function index() {
         .then((res)=>{
         const {id,username,role} = res.data[0]
         loginAction({id,username,role,dispatch})
+        alert("Login Sucess")
         })
-        .catch((err) => console.log({ err }));
+        .catch((err) => alert("Login Gagal"));
+    }
+    if(userName){
+        return <Navigate to="/" replace/>
     }
 
     return (
@@ -42,7 +49,7 @@ function index() {
                 <input onChange={onHandleChange} name="username" type="text" className="form-control" placeholder="Your Email *" />
                 </div>
                 <div className="form-group mt-2">
-                <input onChange={onHandleChange} name="password"type="password" className="form-control" placeholder="Your Password *" />
+                <input onChange={onHandleChange} name="password" type="password" className="form-control" placeholder="Your Password *" />
                 </div>
 
                 <div className="d-flex mt-2 ">
@@ -59,4 +66,4 @@ function index() {
       )
 }
 
-export default index
+export default Index
