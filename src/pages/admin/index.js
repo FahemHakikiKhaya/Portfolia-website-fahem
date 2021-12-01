@@ -7,17 +7,17 @@ import Header from './Heading/Heading'
 
 function Index() {
     return (
-        <>
-        <div>
+        <div className="container">
+        <div >
             <NavBar/>
             <Header/>
        
         </div>
-        <div className="d-flex row ">
+        <div className="d-flex row mx-0 ">
             <Manager/>
             <DisplayUpdate/>
         </div>
-        </>
+        </div>
     )
 }
 

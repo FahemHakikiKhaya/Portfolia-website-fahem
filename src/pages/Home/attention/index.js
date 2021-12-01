@@ -22,7 +22,7 @@ function Index() {
 
     return (
         <div>
-            <AttentionMap attention={attention} />
+            <AttentionMap attentions={attention} />
         </div>
     )
 }

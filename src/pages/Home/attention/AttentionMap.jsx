@@ -3,8 +3,8 @@ import AttentionCard from '../../../component/attentionCard/AttentionCard';
 
 function AttentionMap(props) {
     const renderAttention = () => {
-        return props.attention.map((attention) => (
-          <AttentionCard image={attention.image} />
+        return props.attentions.map((attention) => (
+          <AttentionCard attentions={attention} />
         ));
       };
     
