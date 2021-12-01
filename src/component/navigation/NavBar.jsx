@@ -15,13 +15,6 @@ function NavBar() {
                 <a href="" className="text-decoration-none text-black py-3 px-4 border-inline">myPHILOSOPHY</a>
                 <Link tag={Link} to="/Login"className="text-decoration-none text-black py-3 px-4 border-right">{username ? `Hello ${username}` : 'loginAdmin'} </Link>
                 
-                {/* <div className="input-group rounded search-button">
-                    <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" />
-                    <span className="input-group-text border-0" id="search-addon">
-                    <i className="fas fa-search"></i>
-                    </span>
-                </div> */}
 
                 <div className="Icon-list pt-lg-2 px-3 icon-size d-flex ">
                 <a href="https:www.instagram.com/fahemkhaya/"><i className="fa fa-instagram"></i></a>
