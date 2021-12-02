@@ -1,7 +1,8 @@
 import React from 'react'
 import Home from './pages/Home'
 import Login from './pages/login/index.jsx'
-import Admin from './pages/admin/index'
+import MusicAdmin from './pages/admin/attentionManager/index'
+import FeedAdmin from './pages/admin/feedManager/index'
 import "bootstrap/dist/css/bootstrap.css";
 import './Font.css'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
@@ -13,8 +14,8 @@ function App() {
           <Routes>
              <Route path="/" element={<Home/>}/>
              <Route path="/Login" element={<Login/>}/>
-             <Route path="/Admin" element={<Admin/>}/>
-             
+             <Route path="/MusicAdmin" element={<MusicAdmin/>}/>
+             <Route path="/FeedAdmin" element={<FeedAdmin/>}/>
           </Routes>
        </Router>
     

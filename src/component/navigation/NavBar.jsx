@@ -13,10 +13,10 @@ function NavBar() {
        
             <div className="Nav-Bar body-font px-5">
                 
-            <Link tag={Link} to="/" className=" text-decoration-none text-black py-3 px-4 border-inline">myHOMEPAGE</Link>
-            <a href="" className="text-decoration-none text-black py-3 px-4">myEXPERIENCE</a>
-            <a href="" className="text-decoration-none text-black py-3 px-4 border-inline">myPHILOSOPHY</a>
-            <Link tag={Link} to="/Admin"className="text-decoration-none text-black py-3 px-4 border-right">Hello Admin</Link>
+            <Link tag={Link} to="/" className=" text-decoration-none text-black py-3 px-4 border-inline">Home</Link>
+            <Link  tag={Link} to="/MusicAdmin" className="text-decoration-none text-black py-3 px-4">MusicManager</Link>
+            <Link tag={Link} to="/FeedAdmin"className="text-decoration-none text-black py-3 px-4 border-inline">FeedManager</Link>
+            <Link tag={Link} to="/MusicAdmin" className="text-decoration-none text-black py-3 px-4 border-right">Hello Admin</Link>
             
 
             <div className="Icon-list pt-lg-2 px-3 icon-size d-flex ">
@@ -26,7 +26,7 @@ function NavBar() {
             <a href=""><i className="fa fa-pinterest"></i></a>
             </div>
 
-             </div>
+            </div>
   
 )
     }
@@ -36,10 +36,10 @@ function NavBar() {
        
                 <div className="Nav-Bar body-font px-5">
                     
-                <Link tag={Link} to="/" className=" text-decoration-none text-black py-3 px-4 border-inline">myHOMEPAGE</Link>
-                <a href="" className="text-decoration-none text-black py-3 px-4">myEXPERIENCE</a>
-                <a href="" className="text-decoration-none text-black py-3 px-4 border-inline">myPHILOSOPHY</a>
-                <Link tag={Link} to="/Login"className="text-decoration-none text-black py-3 px-4 border-right">{username ? `Hello ${username}` : 'myLogin'} </Link>
+                <Link tag={Link} to="/" className=" text-decoration-none text-black py-3 px-4 border-inline">myHomePage</Link>
+                <a href="" className="text-decoration-none text-black py-3 px-4">myExperience</a>
+                <a href="" className="text-decoration-none text-black py-3 px-4 border-inline">mySelf</a>
+                <Link tag={Link} to="/Login"className="text-decoration-none text-black py-3 px-4 border-right">Hello Guest </Link>
                 
 
                 <div className="Icon-list pt-lg-2 px-3 icon-size d-flex ">

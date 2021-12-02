@@ -4,7 +4,7 @@ import './login.css'
 import axios from '../../utils/axios'
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from '../../store/actions';
-import {Navigate} from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 
 function Index() {
     const dispatch = useDispatch();
@@ -33,7 +33,7 @@ function Index() {
         .catch((err) =>  console.log({err}) );
     }
     if(userName){
-        return <Navigate to="/" replace/>
+        return <Navigate to="/MusicAdmin" replace/>
     }
 
     return (
