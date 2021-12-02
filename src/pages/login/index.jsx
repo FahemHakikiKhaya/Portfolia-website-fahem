@@ -26,11 +26,11 @@ function Index() {
         params:{username:formState.username,password:formState.password}
         })
         .then((res)=>{
-        const {id,username,role} = res.data[0]
-        loginAction({id,username,role,dispatch})
+        const {id,username,role,permission} = res.data[0]
+        loginAction({id,username,role,permission,dispatch})
         alert("Login Sucess")
         })
-        .catch((err) => alert("Login Gagal"));
+        .catch((err) =>  console.log({err}) );
     }
     if(userName){
         return <Navigate to="/" replace/>
@@ -43,7 +43,7 @@ function Index() {
 
         <div className="col-md-6 login-form-1 mx-auto mt-5">
         
-            <h3>Admin</h3>
+            <h3>Login</h3>
                     
                 <div className="form-group">
                 <input onChange={onHandleChange} name="username" type="text" className="form-control" placeholder="Your Email *" />

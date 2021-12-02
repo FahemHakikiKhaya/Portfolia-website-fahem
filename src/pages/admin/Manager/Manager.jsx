@@ -1,5 +1,4 @@
 import React from 'react'
-import './Manager.css'
 
 
 function Manager() {

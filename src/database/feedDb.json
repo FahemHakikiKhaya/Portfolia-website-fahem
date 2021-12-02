@@ -22,6 +22,7 @@
         {
           "fullName": "Fahem HakikiKhaya",
           "username": "Fahem",
+          "permission":"Admin",
           "email": "Fahem@gmail.com",
           "password": "password",
           "role": "user",

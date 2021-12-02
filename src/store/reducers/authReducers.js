@@ -12,6 +12,7 @@ const authReducer = (state = init , action ) => {
             id: action.payload.id,
             username: action.payload.username,
             role: action.payload.role,
+            permission : action.payload.permission
           };
           break;
     
