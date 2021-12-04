@@ -8,6 +8,20 @@ import Header from '../Heading/Heading'
 
 function Index() {
     const [feeds, setFeeds] = useState([])
+    const [paginationState,setPaginationState] = useState({
+        page:1,
+        maxPage:0,
+        itemPerPage:1,
+        /*
+        Rencana paginationState:
+        1.Setiap feed editor akan mengakses satu feed
+        2.Akan dibuat paginationState untuk mengedit feed berikutnya 
+        */
+    })
+
+    const { id,image,month,date,year,desc,title } = feeds
+
+    
     
     const fetchFeeds = ()=>{
       axios
@@ -15,11 +29,18 @@ function Index() {
       .then((res) => {
         const { data } = res;
         setFeeds(data);
+        setPaginationState({
+            ...paginationState,
+            maxPage: Math.ceil(data.length / paginationState.itemPerPage),
+          });
+        
       })
       .catch((error) => {
         alert(error.message);
       });
     }
+
+
   
     useEffect(() => {
       fetchFeeds()
@@ -27,12 +48,13 @@ function Index() {
 
     const updateData = (formState) => {
         axios
-        .patch(`/feeds/1`,formState)
+        .patch(`/feeds/`,formState)
         .then((res) => {
             fetchFeeds()
         })
         .catch((err) => console.log(err));
     }
+    
     
     return (
         <div className="container">
@@ -42,8 +64,12 @@ function Index() {
        
         </div>
         <div className="d-flex row mx-0 ">
-            <Manager updateData={updateData}/>
-            <DisplayUpdate feeds={feeds}/>
+            <Manager updateData={updateData} />
+            <DisplayUpdate 
+            feeds={feeds} 
+            paginationState={paginationState}
+            setPaginationState={setPaginationState}
+            />
         </div>
         </div>
     )
