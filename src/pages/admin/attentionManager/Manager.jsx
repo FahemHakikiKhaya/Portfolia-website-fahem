@@ -2,8 +2,8 @@ import React,{useState,useEffect} from 'react'
 import axios from '../../../utils/axios';
 
 
-function Manager() {
-    const [Attention,setAttention] = useState([])
+function Manager(props) {
+
     const [formState,setFormState] = useState({
         image:"",
         title:"",
@@ -12,37 +12,15 @@ function Manager() {
     })
 
 
-    const FetchAttention = async()=>{
-        try { const res = axios.get("/attentions")
-        .then((res) => {
-          const { data } = res;
-          setAttention(data)
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-        } catch (error) {
-        }
-    useEffect(()=>{
-        FetchAttention()
-    })
-    }
-
+   
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.name]: e.target.value });
       };
       
     const onSaveButton = () => {
-        const {image,title,singer,desc} = formState
-        const newData = {image,title,singer,desc}
-        axios
-        .patch(`/attentions/${image}`,formState)
-        .then((res) => {
-          FetchAttention()
-        })
-        .catch((err) => console.log(err));
+         props.updatedData(formState)
     };
-   
+ 
 
     return (
         <div className="col-4 border border-3 border-dark px-0">
