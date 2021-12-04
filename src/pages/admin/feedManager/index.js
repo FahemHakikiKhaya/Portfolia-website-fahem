@@ -19,12 +19,13 @@ function Index() {
       .catch((error) => {
         alert(error.message);
       });
+    }
   
     useEffect(() => {
       fetchFeeds()
     }, [])
 
-    const updatedData = (formState) => {
+    const updateData = (formState) => {
         axios
         .patch(`/feeds/1`,formState)
         .then((res) => {
@@ -41,7 +42,7 @@ function Index() {
        
         </div>
         <div className="d-flex row mx-0 ">
-            <Manager/>
+            <Manager updateData={updateData}/>
             <DisplayUpdate feeds={feeds}/>
         </div>
         </div>

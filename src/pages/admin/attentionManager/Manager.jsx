@@ -18,7 +18,7 @@ function Manager(props) {
       };
       
     const onSaveButton = () => {
-         props.updatedData(formState)
+         props.updateData(formState)
     };
  
 

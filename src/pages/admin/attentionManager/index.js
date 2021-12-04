@@ -24,7 +24,7 @@ function Index() {
         FetchAttention()
     },[])
 
-    const updatedData = (formState) => {
+    const updateData = (formState) => {
         axios
         .patch(`/attentions/1`,formState)
         .then((res) => {
@@ -41,7 +41,7 @@ function Index() {
        
         </div>
         <div className="d-flex row mx-0 ">
-            <Manager updatedData={updatedData}/>
+            <Manager updateData={updateData}/>
             <DisplayUpdate attention={attention}/>
         </div>
         </div>
