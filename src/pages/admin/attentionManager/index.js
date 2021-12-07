@@ -41,7 +41,7 @@ function Index() {
        
         </div>
         <div className="d-flex row mx-0 ">
-            <Manager updateData={updateData}/>
+            <Manager updateData={updateData}  />
             <DisplayUpdate attention={attention}/>
         </div>
         </div>

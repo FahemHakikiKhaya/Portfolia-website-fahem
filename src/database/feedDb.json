@@ -3,11 +3,20 @@
     {
       "id": 1,
       "image": "https://i.imgur.com/yHYFNUu.jpg",
-      "month": "Nov",
-      "date": "10",
+      "month": "Dec",
+      "date": "7",
       "year": "2021",
-      "desc": "NgeTest Bisa gani",
-      "title": "Hello"
+      "desc": "tanggal terbaru",
+      "title": "cek lagi"
+    },
+    {
+      "id": 2,
+      "image": "https://i.imgur.com/uGSNiZy.jpg",
+      "month": "Dec",
+      "date": "7",
+      "year": "2021",
+      "desc": "My Dream Girl Updated",
+      "title": "Ruby Jane"
     }
   ],
   "attentions": [

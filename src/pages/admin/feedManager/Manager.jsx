@@ -3,25 +3,33 @@ import React,{useState,useEffect} from 'react'
 
 function Manager(props) {
 
+    const {updateData,slicedFeeds} = props
+
+    // const { id,image,month,date,year,desc,title } = slicedFeeds
+ 
+   
+   
     const [formState,setFormState] = useState({
-        image:"",
-        month:"",
-        date:"",
-        year:"",
-        desc:"",
-        title:"",
+        image="",
+        month="",
+        date="",
+        year="",
+        desc="",
+        title="",
     })
+    
 
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.name]: e.target.value });
       };
     
     const onSaveButton = () => {
-        props.updateData(formState)
+        updateData(formState)
         };
 
 
     return (
+        
         <div className="col-4 border border-3 border-dark px-0">
             
              
@@ -31,31 +39,37 @@ function Manager(props) {
                 name="image"
                 placeholder="Image"
                 type="text"
+                //  value={image}
                 onChange={handleChange}/>
                 <input 
                 name="month"
                 placeholder="Month"
                 type="text"
+                //  value={month}
                 onChange={handleChange} />
                 <input
                 name="date"
                 placeholder="Date"
                 type="text" 
+                //  value={date}
                 onChange={handleChange}/>
                 <input 
                 name="year"
                 placeholder="Year"
                 type="text" 
+                //  value={year}
                 onChange={handleChange}/>
                 <input 
                 name="desc"
                 placeholder="Description"
                 type="text" 
+                //  value={desc}
                 onChange={handleChange}/>
                 <input 
                 name="title"
                 placeholder="Title"
                 type="text" 
+                //  value={title}
                 onChange={handleChange}/>
                 <button
                 onClick= {onSaveButton}

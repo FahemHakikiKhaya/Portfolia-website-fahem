@@ -8,18 +8,14 @@ import Header from '../Heading/Heading'
 
 function Index() {
     const [feeds, setFeeds] = useState([])
+    const [slicedFeeds,setSlicedFeeds] = useState([])
     const [paginationState,setPaginationState] = useState({
         page:1,
         maxPage:0,
         itemPerPage:1,
-        /*
-        Rencana paginationState:
-        1.Setiap feed editor akan mengakses satu feed
-        2.Akan dibuat paginationState untuk mengedit feed berikutnya 
-        */
     })
 
-    const { id,image,month,date,year,desc,title } = feeds
+   
 
     
     
@@ -29,6 +25,7 @@ function Index() {
       .then((res) => {
         const { data } = res;
         setFeeds(data);
+        setSlicedFeeds(data);
         setPaginationState({
             ...paginationState,
             maxPage: Math.ceil(data.length / paginationState.itemPerPage),
@@ -40,15 +37,34 @@ function Index() {
       });
     }
 
-
+    
   
     useEffect(() => {
       fetchFeeds()
     }, [])
 
+    useEffect(()=>{
+     sliceData()
+     renderFilteredFeeds()
+    },[paginationState])
+
+    const sliceData = () => {
+      const { page, itemPerPage } = paginationState;
+      const startIndex = (page - 1) * itemPerPage;
+      const endIndex = startIndex + itemPerPage;
+      const slicedTodos = feeds.slice(startIndex, endIndex);
+      setSlicedFeeds(slicedTodos);
+    }
+
+    const renderFilteredFeeds = () => {
+      return slicedFeeds.map((feeds) => (
+        <Manager slicedFeeds={feeds}/>
+      ));
+    }
     const updateData = (formState) => {
+      const { id,image,month,date,year,desc,title } = slicedFeeds[0]
         axios
-        .patch(`/feeds/`,formState)
+        .patch(`/feeds/${id}`,formState)
         .then((res) => {
             fetchFeeds()
         })
@@ -64,9 +80,9 @@ function Index() {
        
         </div>
         <div className="d-flex row mx-0 ">
-            <Manager updateData={updateData} />
+            <Manager updateData={updateData} slicedFeeds={slicedFeeds} />
             <DisplayUpdate 
-            feeds={feeds} 
+            feeds={slicedFeeds} 
             paginationState={paginationState}
             setPaginationState={setPaginationState}
             />
