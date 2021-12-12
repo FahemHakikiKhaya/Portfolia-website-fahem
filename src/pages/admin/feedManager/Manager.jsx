@@ -5,17 +5,17 @@ function Manager(props) {
 
     const {updateData,slicedFeeds} = props
 
-    // const { id,image,month,date,year,desc,title } = slicedFeeds
+    const { id,image,month,date,year,desc,title } = slicedFeeds
  
    
    
     const [formState,setFormState] = useState({
-        image="",
-        month="",
-        date="",
-        year="",
-        desc="",
-        title="",
+        image:"",
+        month:"",
+        date:"",
+        year:"",
+        desc:"",
+        title:"",
     })
     
 
@@ -39,37 +39,37 @@ function Manager(props) {
                 name="image"
                 placeholder="Image"
                 type="text"
-                //  value={image}
+                 value={image}
                 onChange={handleChange}/>
                 <input 
                 name="month"
                 placeholder="Month"
                 type="text"
-                //  value={month}
+                 value={month}
                 onChange={handleChange} />
                 <input
                 name="date"
                 placeholder="Date"
                 type="text" 
-                //  value={date}
+                 value={date}
                 onChange={handleChange}/>
                 <input 
                 name="year"
                 placeholder="Year"
                 type="text" 
-                //  value={year}
+                value={year}
                 onChange={handleChange}/>
                 <input 
                 name="desc"
                 placeholder="Description"
                 type="text" 
-                //  value={desc}
+                 value={desc}
                 onChange={handleChange}/>
                 <input 
                 name="title"
                 placeholder="Title"
                 type="text" 
-                //  value={title}
+                 value={title}
                 onChange={handleChange}/>
                 <button
                 onClick= {onSaveButton}

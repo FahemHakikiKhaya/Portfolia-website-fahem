@@ -15,10 +15,7 @@ function Index() {
         itemPerPage:1,
     })
 
-   
-
-    
-    
+    // Menambil Feeds dari axios
     const fetchFeeds = ()=>{
       axios
       .get("/feeds")
@@ -41,11 +38,12 @@ function Index() {
   
     useEffect(() => {
       fetchFeeds()
+      MapFilteredFeeds()
     }, [])
 
     useEffect(()=>{
      sliceData()
-     renderFilteredFeeds()
+     MapFilteredFeeds()
     },[paginationState])
 
     const sliceData = () => {
@@ -56,13 +54,13 @@ function Index() {
       setSlicedFeeds(slicedTodos);
     }
 
-    const renderFilteredFeeds = () => {
+    const MapFilteredFeeds = () => {
       return slicedFeeds.map((feeds) => (
         <Manager slicedFeeds={feeds}/>
       ));
     }
     const updateData = (formState) => {
-      const { id,image,month,date,year,desc,title } = slicedFeeds[0]
+      const {id} = slicedFeeds[0]
         axios
         .patch(`/feeds/${id}`,formState)
         .then((res) => {
