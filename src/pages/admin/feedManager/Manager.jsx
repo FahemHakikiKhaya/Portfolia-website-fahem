@@ -5,10 +5,11 @@ function Manager(props) {
 
     const {updateData,slicedFeeds} = props
 
-    const { id,image,month,date,year,desc,title } = slicedFeeds
+    
  
    
-   
+    const [feedCatch,setFeedCatch] = useState([])
+    const {image,month,date,year,desc,title } = slicedFeeds
     const [formState,setFormState] = useState({
         image:"",
         month:"",
@@ -18,7 +19,7 @@ function Manager(props) {
         title:"",
     })
     
-
+  
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.name]: e.target.value });
       };

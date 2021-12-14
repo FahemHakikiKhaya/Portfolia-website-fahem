@@ -15,6 +15,7 @@ function DisplayUpdate(props) {
         if (page < maxPage)
           setPaginationState({ ...paginationState, page: page + 1 });
       };
+
   
     return (
         <div className="col-8 border-bottom border-top border-end border-3 border-dark">

@@ -3,7 +3,6 @@ import axios from '../../../utils/axios'
 import NavBar from '../../../component/navigation/NavBar'
 import DisplayUpdate from './DisplayUpdate'
 import Manager from './Manager'
-
 import Header from '../Heading/Heading'
 
 function Index() {
@@ -38,14 +37,15 @@ function Index() {
   
     useEffect(() => {
       fetchFeeds()
-      MapFilteredFeeds()
     }, [])
 
     useEffect(()=>{
      sliceData()
-     MapFilteredFeeds()
     },[paginationState])
 
+    useEffect(()=>{
+      sendData()
+    })
     const sliceData = () => {
       const { page, itemPerPage } = paginationState;
       const startIndex = (page - 1) * itemPerPage;
@@ -54,11 +54,10 @@ function Index() {
       setSlicedFeeds(slicedTodos);
     }
 
-    const MapFilteredFeeds = () => {
-      return slicedFeeds.map((feeds) => (
-        <Manager slicedFeeds={feeds}/>
-      ));
+    const sendData = () =>{
+      <Manager data = {slicedFeeds[0]}/>
     }
+
     const updateData = (formState) => {
       const {id} = slicedFeeds[0]
         axios
@@ -68,7 +67,7 @@ function Index() {
         })
         .catch((err) => console.log(err));
     }
-    
+  
     
     return (
         <div className="container">
@@ -84,8 +83,10 @@ function Index() {
             paginationState={paginationState}
             setPaginationState={setPaginationState}
             />
+            
         </div>
         </div>
+        
     )
 }
 
