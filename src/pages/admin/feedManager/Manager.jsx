@@ -1,89 +1,179 @@
-import React,{useState,useEffect} from 'react'
-
+import React, { useState, useEffect, useDebugValue } from "react";
 
 function Manager(props) {
+  const { updateData, slicedFeeds, paginationState } = props;
+  const [AddFeed, setAddFeed] = useState(false);
+  const [formState, setFormState] = useState({
+    image: "",
+    month: "",
+    date: "",
+    year: "",
+    desc: "",
+    title: "",
+  });
+  const [newFeed, setNewFeed] = useState({
+    image: "",
+    month: "",
+    date: "",
+    year: "",
+    desc: "",
+    title: "",
+  });
 
-    const {updateData,slicedFeeds,paginationState} = props
+  useEffect(() => {
+    setFormState(slicedFeeds[0]);
+  }, []);
 
-    const [formState,setFormState] = useState({
-        image:"",
-        month:"",
-        date:"",
-        year:"",
-        desc:"",
-        title:"",
-    })
+  useEffect(() => {
+    setFormState(slicedFeeds[0]);
+  }, [paginationState]);
 
-    useEffect(()=>{
-        setFormState(slicedFeeds[0])
-    },[])
+  const { image, month, date, year, desc, title } = formState;
 
-    useEffect(()=>{
-        setFormState(slicedFeeds[0])
-    },[paginationState])
-    
-    const {image,month,date,year,desc,title} = formState
-    const handleChange = (e) => {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
-      };
-    
-    const onSaveButton = () => {
-        updateData(formState)
-        };
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
+  useEffect(() => {
+    console.log(AddFeed);
+  }, [AddFeed]);
 
+  const onSaveButton = () => {
+    updateData(formState);
+  };
 
-    return (
-        
-        <div className="col-4 border border-3 border-dark px-0">
-            
-             
-            <div className="d-flex row border border-dark w-100 mx-0 ">
-                <h4 className="bg-info border border-1 my-auto border-dark align-text">Edit Feed</h4>
-                <input 
-                name="image"
-                placeholder="Image"
-                type="text"
-                 value={image}
-                onChange={handleChange}/>
-                <input 
-                name="month"
-                placeholder="Month"
-                type="text"
-                 value={month}
-                onChange={handleChange} />
-                <input
-                name="date"
-                placeholder="Date"
-                type="text" 
-                 value={date}
-                onChange={handleChange}/>
-                <input 
-                name="year"
-                placeholder="Year"
-                type="text" 
-                value={year}
-                onChange={handleChange}/>
-                <input 
-                name="desc"
-                placeholder="Description"
-                type="text" 
-                 value={desc}
-                onChange={handleChange}/>
-                <input 
-                name="title"
-                placeholder="Title"
-                type="text" 
-                 value={title}
-                onChange={handleChange}/>
-                <button
-                onClick= {onSaveButton}
-                className="btn btn-success">Save</button>
-                <button 
-                className="btn btn-danger">Clear</button>
-            </div>
-          
+  const onChangeNewFeed = (e) => {
+    setNewFeed({ ...newFeed, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <div className="col-4 border border-3 border-dark px-0">
+      <div className="d-flex column">
+        <button
+          type="button"
+          class="btn btn-primary w-100"
+          onClick={() => {
+            setAddFeed(false);
+          }}
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="btn btn-success w-100"
+          onClick={() => {
+            setAddFeed(true);
+          }}
+        >
+          Add
+        </button>
+      </div>
+      {AddFeed ? (
+        <div className="d-flex row border border-dark w-100 mx-0 ">
+          <h4 className="bg-info border border-1 my-auto border-dark align-text">
+            Add Feed
+          </h4>
+          <input
+            name="image"
+            placeholder="Image"
+            type="text"
+            value={newFeed.image}
+            onChange={onChangeNewFeed}
+          />
+          <input
+            name="month"
+            placeholder="Month"
+            type="text"
+            value={newFeed.month}
+            onChange={onChangeNewFeed}
+          />
+          <input
+            name="date"
+            placeholder="Date"
+            type="text"
+            value={newFeed.date}
+            onChange={onChangeNewFeed}
+          />
+          <input
+            name="year"
+            placeholder="Year"
+            type="text"
+            value={newFeed.year}
+            onChange={onChangeNewFeed}
+          />
+          <input
+            name="desc"
+            placeholder="Description"
+            type="text"
+            value={newFeed.desc}
+            onChange={onChangeNewFeed}
+          />
+          <input
+            name="title"
+            placeholder="Title"
+            type="text"
+            value={newFeed.title}
+            onChange={onChangeNewFeed}
+          />
+          <button onClick={onSaveButton} className="btn btn-success">
+            Save
+          </button>
+          <button className="btn btn-danger">Clear</button>
         </div>
-    )
+      ) : (
+        <div className="d-flex row border border-dark w-100 mx-0 ">
+          <h4 className="bg-info border border-1 my-auto border-dark align-text">
+            Edit Feed
+          </h4>
+          <input
+            name="image"
+            placeholder="Image"
+            type="text"
+            value={image}
+            onChange={handleChange}
+          />
+          <input
+            name="month"
+            placeholder="Month"
+            type="text"
+            value={month}
+            onChange={handleChange}
+          />
+          <input
+            name="date"
+            placeholder="Date"
+            type="text"
+            value={date}
+            onChange={handleChange}
+          />
+          <input
+            name="year"
+            placeholder="Year"
+            type="text"
+            value={year}
+            onChange={handleChange}
+          />
+          <input
+            name="desc"
+            placeholder="Description"
+            type="text"
+            value={desc}
+            onChange={handleChange}
+          />
+          <input
+            name="title"
+            placeholder="Title"
+            type="text"
+            value={title}
+            onChange={handleChange}
+          />
+          <button onClick={onSaveButton} className="btn btn-success">
+            Save
+          </button>
+          <button className="btn btn-danger">Clear</button>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default Manager
+export default Manager;
