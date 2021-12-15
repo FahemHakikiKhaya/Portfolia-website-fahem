@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from '../../../utils/axios'
 import FeedMap from '../../Home/feed/FeedMap'
+import FeedCard from '../../../component/feedcard/FeedCard'
 
 
 function DisplayUpdate(props) {
@@ -20,7 +21,7 @@ function DisplayUpdate(props) {
     return (
         <div className="col-8 border-bottom border-top border-end border-3 border-dark">
             <div>
-                <FeedMap feeds={props.feeds} />
+                <FeedCard feed={props.feed[0]} />
             </div>
             <div className="mt-2 mb-2">
                 <div className="d-flex flex-row justify-content-center">

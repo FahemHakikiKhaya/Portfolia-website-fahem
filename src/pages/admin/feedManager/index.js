@@ -34,18 +34,15 @@ function Index() {
     }
 
     
-  
     useEffect(() => {
-      fetchFeeds()
+     fetchFeeds()
     }, [])
 
     useEffect(()=>{
      sliceData()
     },[paginationState])
 
-    useEffect(()=>{
-      sendData()
-    })
+ 
     const sliceData = () => {
       const { page, itemPerPage } = paginationState;
       const startIndex = (page - 1) * itemPerPage;
@@ -54,9 +51,6 @@ function Index() {
       setSlicedFeeds(slicedTodos);
     }
 
-    const sendData = () =>{
-      <Manager data = {slicedFeeds[0]}/>
-    }
 
     const updateData = (formState) => {
       const {id} = slicedFeeds[0]
@@ -76,15 +70,15 @@ function Index() {
             <Header/>
        
         </div>
-        <div className="d-flex row mx-0 ">
-            <Manager updateData={updateData} slicedFeeds={slicedFeeds} />
+        {slicedFeeds.length && <div className="d-flex row mx-0 ">
+            <Manager updateData={updateData} slicedFeeds={slicedFeeds} paginationState={paginationState} />
             <DisplayUpdate 
-            feeds={slicedFeeds} 
+            feed={slicedFeeds} 
             paginationState={paginationState}
             setPaginationState={setPaginationState}
             />
             
-        </div>
+        </div>}
         </div>
         
     )

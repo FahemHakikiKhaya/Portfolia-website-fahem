@@ -13,19 +13,19 @@
       "id": 2,
       "image": "https://i.imgur.com/uGSNiZy.jpg",
       "month": "Dec",
-      "date": "7",
+      "date": "15",
       "year": "2021",
-      "desc": "My Dream Girl Updated",
-      "title": "Ruby Jane"
+      "desc": "test",
+      "title": "test"
     }
   ],
   "attentions": [
     {
       "id": 1,
-      "image": "https://i.pinimg.com/originals/3e/08/56/3e0856791f15cc02a3d39513cfac8235.jpg",
-      "title": "Breathe",
-      "singer": "Lee Hi",
-      "desc": "Meaningful song with beautiful lyrics and flow"
+      "image": "https://dl.kaskus.id/images-na.ssl-images-amazon.com/images/I/71-Y-3usHkL._SL1500_.jpg",
+      "title": "I wanna be yours",
+      "singer": "Arctic Monkey",
+      "desc": "On Repeat"
     }
   ],
   "users": [

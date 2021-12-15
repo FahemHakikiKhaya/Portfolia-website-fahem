@@ -3,13 +3,8 @@ import React,{useState,useEffect} from 'react'
 
 function Manager(props) {
 
-    const {updateData,slicedFeeds} = props
+    const {updateData,slicedFeeds,paginationState} = props
 
-    
- 
-   
-    const [feedCatch,setFeedCatch] = useState([])
-    const {image,month,date,year,desc,title } = slicedFeeds
     const [formState,setFormState] = useState({
         image:"",
         month:"",
@@ -18,8 +13,16 @@ function Manager(props) {
         desc:"",
         title:"",
     })
+
+    useEffect(()=>{
+        setFormState(slicedFeeds[0])
+    },[])
+
+    useEffect(()=>{
+        setFormState(slicedFeeds[0])
+    },[paginationState])
     
-  
+    const {image,month,date,year,desc,title} = formState
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.name]: e.target.value });
       };
