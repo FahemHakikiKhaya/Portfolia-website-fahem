@@ -2,6 +2,7 @@ import React, { useState, useEffect, useDebugValue } from "react";
 
 function Manager(props) {
   const { updateData, slicedFeeds, paginationState, addNewData } = props;
+
   const [AddFeed, setAddFeed] = useState(false);
   const [formState, setFormState] = useState({
     image: "",
@@ -11,6 +12,7 @@ function Manager(props) {
     desc: "",
     title: "",
   });
+  const { image, month, date, year, desc, title } = formState;
   const [newFeed, setNewFeed] = useState({
     image: "",
     month: "",
@@ -26,16 +28,11 @@ function Manager(props) {
 
   useEffect(() => {
     setFormState(slicedFeeds[0]);
-  }, [paginationState]);
-
-  const { image, month, date, year, desc, title } = formState;
+  }, [slicedFeeds]);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    console.log(AddFeed);
-  }, [AddFeed]);
 
   const onSaveButton = () => {
     updateData(formState);

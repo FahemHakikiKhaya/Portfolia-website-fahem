@@ -14,14 +14,12 @@ function Index() {
     itemPerPage: 1,
   });
 
-  // Menambil Feeds dari axios
   const fetchFeeds = () => {
     axios
       .get("/feeds")
       .then((res) => {
         const { data } = res;
         setFeeds(data);
-        setSlicedFeeds(data);
         setPaginationState({
           ...paginationState,
           maxPage: Math.ceil(data.length / paginationState.itemPerPage),
@@ -73,11 +71,7 @@ function Index() {
       .post("/feeds", newFeed)
       .then((res) => {
         fetchFeeds();
-        setPaginationState({
-          ...paginationState,
-          page: res.data.length,
-        });
-        sliceData();
+        console.log(paginationState.page);
       })
       .catch((error) => console.log({ error }));
   };
