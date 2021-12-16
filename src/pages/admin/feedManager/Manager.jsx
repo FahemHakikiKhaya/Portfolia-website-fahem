@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useDebugValue } from "react";
 
 function Manager(props) {
-  const { updateData, slicedFeeds, paginationState, addNewData } = props;
+  const { updateData, slicedFeeds, paginationState, addNewData, deleteData } =
+    props;
 
   const [AddFeed, setAddFeed] = useState(false);
   const [formState, setFormState] = useState({
@@ -52,6 +53,10 @@ function Manager(props) {
       desc: "",
       title: "",
     });
+  };
+
+  const onClearButton = () => {
+    deleteData(slicedFeeds[0]);
   };
 
   return (
@@ -126,7 +131,9 @@ function Manager(props) {
           <button onClick={onAddButton} className="btn btn-success">
             Save
           </button>
-          <button className="btn btn-danger">Clear</button>
+          <button onClick={onClearButton} className="btn btn-danger">
+            Clear
+          </button>
         </div>
       ) : (
         <div className="d-flex row border border-dark w-100 mx-0 ">
@@ -178,7 +185,9 @@ function Manager(props) {
           <button onClick={onSaveButton} className="btn btn-success">
             Save
           </button>
-          <button className="btn btn-danger">Clear</button>
+          <button onClick={onClearButton} className="btn btn-danger">
+            Clear
+          </button>
         </div>
       )}
     </div>

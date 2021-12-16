@@ -14,16 +14,24 @@ function Index() {
     itemPerPage: 1,
   });
 
-  const fetchFeeds = () => {
+  const fetchFeeds = (e) => {
     axios
       .get("/feeds")
       .then((res) => {
         const { data } = res;
         setFeeds(data);
-        setPaginationState({
-          ...paginationState,
-          maxPage: Math.ceil(data.length / paginationState.itemPerPage),
-        });
+        if (e == "add") {
+          setPaginationState({
+            ...paginationState,
+            page: Math.ceil(data.length / paginationState.itemPerPage),
+            maxPage: Math.ceil(data.length / paginationState.itemPerPage),
+          });
+        } else {
+          setPaginationState({
+            ...paginationState,
+            maxPage: Math.ceil(data.length / paginationState.itemPerPage),
+          });
+        }
       })
       .catch((error) => {
         alert(error.message);
@@ -70,8 +78,17 @@ function Index() {
     axios
       .post("/feeds", newFeed)
       .then((res) => {
-        fetchFeeds();
+        fetchFeeds("add");
         console.log(paginationState.page);
+      })
+      .catch((error) => console.log({ error }));
+  };
+
+  const deleteData = (data) => {
+    axios
+      .delete(`feeds/${data.id}`)
+      .then((res) => {
+        fetchFeeds();
       })
       .catch((error) => console.log({ error }));
   };
@@ -89,6 +106,7 @@ function Index() {
             slicedFeeds={slicedFeeds}
             paginationState={paginationState}
             addNewData={addNewData}
+            deleteData={deleteData}
           />
           <DisplayUpdate
             feed={slicedFeeds}
