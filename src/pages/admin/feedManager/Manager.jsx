@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useDebugValue } from "react";
 
 function Manager(props) {
-  const { updateData, slicedFeeds, paginationState } = props;
+  const { updateData, slicedFeeds, paginationState, addNewData } = props;
   const [AddFeed, setAddFeed] = useState(false);
   const [formState, setFormState] = useState({
     image: "",
@@ -43,6 +43,18 @@ function Manager(props) {
 
   const onChangeNewFeed = (e) => {
     setNewFeed({ ...newFeed, [e.target.name]: e.target.value });
+  };
+
+  const onAddButton = () => {
+    addNewData(newFeed);
+    setNewFeed({
+      image: "",
+      month: "",
+      date: "",
+      year: "",
+      desc: "",
+      title: "",
+    });
   };
 
   return (
@@ -114,7 +126,7 @@ function Manager(props) {
             value={newFeed.title}
             onChange={onChangeNewFeed}
           />
-          <button onClick={onSaveButton} className="btn btn-success">
+          <button onClick={onAddButton} className="btn btn-success">
             Save
           </button>
           <button className="btn btn-danger">Clear</button>
