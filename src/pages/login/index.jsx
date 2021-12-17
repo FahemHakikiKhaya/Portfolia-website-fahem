@@ -8,7 +8,7 @@ import { Navigate } from "react-router-dom";
 
 function Index() {
   const dispatch = useDispatch();
-  const userName = useSelector((state) => state.auth.username);
+  const role = useSelector((state) => state.auth.role);
   const [formState, setFormState] = useState({
     username: "",
     password: "",
@@ -30,7 +30,7 @@ function Index() {
       })
       .catch((err) => console.log({ err }));
   };
-  if (userName) {
+  if (role == "Admin") {
     return <Navigate to="/MusicAdmin" replace />;
   }
 

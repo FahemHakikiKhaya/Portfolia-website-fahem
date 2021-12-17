@@ -4,8 +4,11 @@ import NavBar from "../../../component/navigation/NavBar";
 import DisplayUpdate from "./DisplayUpdate";
 import Manager from "./Manager";
 import Header from "../Heading/Heading";
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Index() {
+  const role = useSelector((state) => state.auth.role);
   const [feeds, setFeeds] = useState([]);
   const [slicedFeeds, setSlicedFeeds] = useState([]);
   const [paginationState, setPaginationState] = useState({
@@ -100,6 +103,7 @@ function Index() {
       .catch((error) => console.log({ error }));
   };
 
+  if (role !== "Admin") return <Navigate to="/" replace />;
   return (
     <div className="container">
       <div>

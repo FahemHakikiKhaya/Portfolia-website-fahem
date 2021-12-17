@@ -6,14 +6,13 @@ import { logoutAction } from "../../store/actions";
 
 function NavBar() {
   const dispatch = useDispatch();
-  const permission = useSelector((state) => state.auth.role);
+  const role = useSelector((state) => state.auth.role);
 
   const onLogout = () => {
     dispatch(logoutAction());
-    return <Navigate to="/" replace />;
   };
 
-  if (permission == "Admin") {
+  if (role == "Admin") {
     return (
       <div className="Nav-Bar body-font px-5">
         <Link
@@ -37,14 +36,14 @@ function NavBar() {
         >
           FeedManager
         </Link>
-        <button
+        <Link
           tag={Link}
-          to="/MusicAdmin"
+          to="/"
           onClick={onLogout}
           className="btn text-decoration-none text-black py-3 px-4 border-right"
         >
           Log Out
-        </button>
+        </Link>
 
         <div className="Icon-list pt-lg-2 px-3 icon-size d-flex ">
           <a href="https:www.instagram.com/fahemkhaya/">
