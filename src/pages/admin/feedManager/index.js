@@ -26,6 +26,13 @@ function Index() {
             page: Math.ceil(data.length / paginationState.itemPerPage),
             maxPage: Math.ceil(data.length / paginationState.itemPerPage),
           });
+        }
+        if (e == "delete") {
+          setPaginationState({
+            ...paginationState,
+            page: paginationState.page - 1,
+            maxPage: Math.ceil(data.length / paginationState.itemPerPage),
+          });
         } else {
           setPaginationState({
             ...paginationState,
@@ -88,7 +95,7 @@ function Index() {
     axios
       .delete(`feeds/${data.id}`)
       .then((res) => {
-        fetchFeeds();
+        fetchFeeds("delete");
       })
       .catch((error) => console.log({ error }));
   };
