@@ -1,13 +1,19 @@
 import React from "react";
 import "./NavBarStyle.css";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutAction } from "../../store/actions";
 
 function NavBar() {
-  const permission = useSelector((state) => state.auth.permission);
+  const dispatch = useDispatch();
+  const permission = useSelector((state) => state.auth.role);
 
-  const username = useSelector((state) => state.auth.username);
-  if (permission) {
+  const onLogout = () => {
+    dispatch(logoutAction());
+    return <Navigate to="/" replace />;
+  };
+
+  if (permission == "Admin") {
     return (
       <div className="Nav-Bar body-font px-5">
         <Link
@@ -31,13 +37,14 @@ function NavBar() {
         >
           FeedManager
         </Link>
-        <Link
+        <button
           tag={Link}
           to="/MusicAdmin"
-          className="text-decoration-none text-black py-3 px-4 border-right"
+          onClick={onLogout}
+          className="btn text-decoration-none text-black py-3 px-4 border-right"
         >
           Log Out
-        </Link>
+        </button>
 
         <div className="Icon-list pt-lg-2 px-3 icon-size d-flex ">
           <a href="https:www.instagram.com/fahemkhaya/">
