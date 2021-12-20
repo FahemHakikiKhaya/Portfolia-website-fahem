@@ -36,8 +36,6 @@ function Index() {
 
   return (
     <div>
-      <NavBar />
-
       <div className="col-md-4 login-form-1 mx-auto mt-5">
         <h3>Login</h3>
 

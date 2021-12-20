@@ -7,6 +7,8 @@ import Header from "../Heading/Heading";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+//CSS OVERFLOW
+
 function Index() {
   const role = useSelector((state) => state.auth.role);
   const [feeds, setFeeds] = useState([]);
@@ -107,7 +109,6 @@ function Index() {
   return (
     <div className="container">
       <div>
-        <NavBar />
         <Header />
       </div>
       {slicedFeeds.length && (

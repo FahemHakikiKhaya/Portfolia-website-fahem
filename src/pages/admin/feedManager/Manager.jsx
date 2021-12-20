@@ -186,7 +186,7 @@ function Manager(props) {
             Save
           </button>
           <button onClick={onClearButton} className="btn btn-danger">
-            Clear
+            Delete
           </button>
         </div>
       )}

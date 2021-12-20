@@ -37,7 +37,6 @@ function Index() {
   return (
     <div className="container">
       <div>
-        <NavBar />
         <Header />
       </div>
       <div className="d-flex row mx-0 ">
