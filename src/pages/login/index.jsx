@@ -38,7 +38,7 @@ function Index() {
     <div>
       <NavBar />
 
-      <div className="col-md-6 login-form-1 mx-auto mt-5">
+      <div className="col-md-4 login-form-1 mx-auto mt-5">
         <h3>Login</h3>
 
         <div className="form-group">

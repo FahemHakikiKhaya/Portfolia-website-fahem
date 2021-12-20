@@ -129,10 +129,10 @@ function Manager(props) {
             onChange={onChangeNewFeed}
           />
           <button onClick={onAddButton} className="btn btn-success">
-            Save
+            Add
           </button>
           <button onClick={onClearButton} className="btn btn-danger">
-            Clear
+            Delete
           </button>
         </div>
       ) : (
