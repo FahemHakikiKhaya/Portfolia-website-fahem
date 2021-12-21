@@ -7,11 +7,15 @@ import NavBar from "../../component/navigation/NavBar";
 
 function index() {
   return (
-    <div className="container px-5">
-      <Header />
-      <Attention />
-      <Border />
-      <Feed />
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div className="container px-5">
+        <Attention />
+        <Border />
+        <Feed />
+      </div>
     </div>
   );
 }

@@ -3,18 +3,20 @@
 }
 .outer-div {
   background-image: url("https://images.alphacoders.com/592/thumb-1920-592781.jpg");
+  height: 80vh;
 }
 .Header {
-  border: var(--border-setup);
   text-align: center;
   padding: 50px 0px;
 }
 .Header h1 {
   font-size: 80px;
   font-weight: 100;
+  color: white;
 }
 .Header h4 {
   font-size: 40px;
   font-weight: lighter;
   letter-spacing: 10px;
+  color: white;
 }

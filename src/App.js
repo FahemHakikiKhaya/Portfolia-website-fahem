@@ -30,7 +30,7 @@ function App() {
   if (isLocalStorageChecked) {
     return (
       <Router>
-        <MuiNavBar />
+        {/* <MuiNavBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />

@@ -1,4 +1,6 @@
-.Button:disabled {
+.Button {
   color: white !important;
-  font-size: 70px;
+}
+.Button :hover {
+  color: darkblue !important;
 }
