@@ -1,15 +1,14 @@
 import React from "react";
+import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { grey } from "@mui/material/colors";
-
+import "./index.css";
 function muiNavBar() {
-  const a = grey[900];
   return (
-    <div>
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
-    </div>
+    <Container maxWidth="none" sx={{ bgcolor: "primary.main" }}>
+      <Button disabled className="Button">
+        HELLO Hello
+      </Button>
+    </Container>
   );
 }
 

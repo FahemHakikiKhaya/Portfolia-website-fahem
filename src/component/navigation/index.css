@@ -1,0 +1,4 @@
+.Button:disabled {
+  color: white !important;
+  font-size: 70px;
+}

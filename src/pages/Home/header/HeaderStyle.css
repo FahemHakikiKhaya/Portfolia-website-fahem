@@ -1,21 +1,20 @@
-
-:root{
-    --border-setup:0.2px solid black;
+:root {
+  --border-setup: 0.2px solid black;
 }
-.Header{
-    border: var(--border-setup);
-    text-align: center;
-    padding: 50px 0px;
+.outer-div {
+  background-image: url("https://images.alphacoders.com/592/thumb-1920-592781.jpg");
 }
-.Header h1{
-    font-size:80px;
-    font-weight: 100;
-
+.Header {
+  border: var(--border-setup);
+  text-align: center;
+  padding: 50px 0px;
 }
-.Header h4{
-    font-size:40px;
-    font-weight: lighter;
-    letter-spacing: 10px;
+.Header h1 {
+  font-size: 80px;
+  font-weight: 100;
 }
-
-
+.Header h4 {
+  font-size: 40px;
+  font-weight: lighter;
+  letter-spacing: 10px;
+}

@@ -30,7 +30,6 @@ function App() {
   if (isLocalStorageChecked) {
     return (
       <Router>
-        <Navbar />
         <MuiNavBar />
         <Routes>
           <Route path="/" element={<Home />} />
