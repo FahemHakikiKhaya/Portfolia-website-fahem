@@ -2,12 +2,16 @@
   --border-setup: 0.2px solid black;
 }
 .outer-div {
-  background-image: url("https://images.alphacoders.com/592/thumb-1920-592781.jpg");
+  /* background-image: inherit; */
   height: 80vh;
 }
 .Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+  align-items: center;
   text-align: center;
-  padding: 50px 0px;
 }
 .Header h1 {
   font-size: 80px;

@@ -3,7 +3,8 @@ import Attention from "./attention";
 import Header from "./header";
 import Feed from "./feed";
 import Border from "../../component/border/Border_one";
-import NavBar from "../../component/navigation/NavBar";
+import MuiNavBar from "../../component/navigation/muiNavBar";
+import "./index.css";
 
 function Index() {
   let listener = null;
@@ -29,9 +30,10 @@ function Index() {
   }, [scrollState]);
 
   return (
-    <div>
+    <div className="home">
+      <MuiNavBar scrollState={scrollState} />
       <div>
-        <Header scrollState={scrollState} />
+        <Header />
       </div>
       <div className="container px-5">
         <Attention />

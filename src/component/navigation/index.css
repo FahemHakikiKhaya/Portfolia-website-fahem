@@ -5,6 +5,9 @@
   color: darkblue !important;
 }
 .muiNavBar {
-  position: sticky;
+  position: fixed;
   top: 0;
+}
+.black {
+  background-color: black;
 }
