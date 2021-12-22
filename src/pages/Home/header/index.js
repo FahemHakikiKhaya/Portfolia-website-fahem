@@ -2,10 +2,10 @@ import React from "react";
 import "./HeaderStyle.css";
 import MuiNavBar from "../../../component/navigation/muiNavBar";
 
-function index() {
+function index({ scrollState }) {
   return (
     <div className="outer-div">
-      <MuiNavBar />
+      <MuiNavBar scrollState={scrollState} />
       <div className="Header">
         <h4 className="body-font p-3">人生のフロントページ</h4>
         <h1 className="title-font title-1 letter-spacing p-5">

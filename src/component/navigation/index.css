@@ -4,3 +4,7 @@
 .Button :hover {
   color: darkblue !important;
 }
+.muiNavBar {
+  position: sticky;
+  top: 0;
+}

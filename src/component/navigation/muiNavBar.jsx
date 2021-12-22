@@ -8,9 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
-function muiNavBar() {
+function muiNavBar({ scrollState }) {
+  let navBG = "";
+  if (scrollState == "top") navBG = { bgcolor: "inherit" };
+  if (scrollState == "amir") navBG = { bgcolor: "text.disabled" };
   return (
-    <Container maxWidth="none" sx={{ bgcolor: "inherit" }}>
+    <Container maxWidth="none" sx={navBG} className="muiNavBar">
       <Stack direction="row" justifyContent="space-between" p={3}>
         <Button
           variant="Text"
