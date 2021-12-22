@@ -8,8 +8,6 @@ import { keepLoginAction } from "./store/actions";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Font.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./component/navigation/NavBar";
-import MuiNavBar from "./component/navigation/muiNavBar";
 
 function App() {
   const [isLocalStorageChecked, setIsLocalStorageChecked] = useState(false);

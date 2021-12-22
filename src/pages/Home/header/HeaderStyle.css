@@ -2,7 +2,6 @@
   --border-setup: 0.2px solid black;
 }
 .outer-div {
-  /* background-image: inherit; */
   height: 80vh;
 }
 .Header {
