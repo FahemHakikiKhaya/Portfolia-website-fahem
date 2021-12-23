@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutAction } from "../../store/actions";
 
+
 function NavBar() {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.auth.role);

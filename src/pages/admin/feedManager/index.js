@@ -6,6 +6,7 @@ import Manager from "./Manager";
 import Header from "../Heading/Heading";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import MuiNavBar from "../../../component/navigation/muiNavBar";
 
 //CSS OVERFLOW
 
@@ -109,6 +110,7 @@ function Index() {
   return (
     <div className="container">
       <div>
+        <MuiNavBar />
         <Header />
       </div>
       {slicedFeeds.length && (

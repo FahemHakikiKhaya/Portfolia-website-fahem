@@ -6,6 +6,7 @@ import axios from "../../../utils/axios";
 import { Navigate } from "react-router-dom";
 import Header from "../Heading/Heading";
 import { useSelector } from "react-redux";
+import MuiNavBar from "../../../component/navigation/muiNavBar";
 
 function Index() {
   const [attention, setAttention] = useState([]);
@@ -37,6 +38,7 @@ function Index() {
   return (
     <div className="container">
       <div>
+        <MuiNavBar />
         <Header />
       </div>
       <div className="d-flex row mx-0 ">

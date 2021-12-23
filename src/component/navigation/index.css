@@ -11,3 +11,8 @@
 .black {
   background-color: black;
 }
+
+.muiNavBar-admin {
+  position: sticky;
+  top: 0;
+}

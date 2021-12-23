@@ -6,17 +6,72 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
-import { Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutAction } from "../../store/actions";
 
 import "./index.css";
-function muiNavBar({ scrollState }) {
+function MuiNavBar({ scrollState }) {
+  const dispatch = useDispatch();
+  const role = useSelector((state) => state.auth.role);
+
+  const onLogout = () => {
+    dispatch(logoutAction());
+  };
+
   let navBG = "";
   if (scrollState == "top") navBG = "inherit";
   if (scrollState == "amir") navBG = "black";
 
-  // const onNavigateClick = (e) => {
-  //   return <Navigate to=`${e}` replace />
-  // };
+  if (role == "Admin") {
+    return (
+      <Container
+        maxWidth="none"
+        style={{ backgroundColor: "black" }}
+        className="muiNavBar-admin"
+      >
+        <Stack direction="row" justifyContent="space-between" p={3}>
+          <Button
+            variant="Text"
+            size="large"
+            className="Button"
+            startIcon={<FontAwesomeIcon icon={faRocket} />}
+          >
+            Fahem HakikiKhaya
+          </Button>
+          <Box>
+            <Button href="/" variant="Text" size="large" className="Button">
+              Home
+            </Button>
+            <Button
+              href="/MusicAdmin"
+              variant="Text"
+              size="large"
+              className="Button"
+            >
+              OnRepeat
+            </Button>
+            <Button
+              href="/FeedAdmin"
+              variant="Text"
+              size="large"
+              className="Button"
+            >
+              Feed
+            </Button>
+            <Button
+              onClick={onLogout}
+              href="/"
+              variant="Text"
+              size="large"
+              className="Button"
+            >
+              Logout
+            </Button>
+          </Box>
+        </Stack>
+      </Container>
+    );
+  }
   return (
     <Container
       maxWidth="none"
@@ -51,4 +106,4 @@ function muiNavBar({ scrollState }) {
   );
 }
 
-export default muiNavBar;
+export default MuiNavBar;
