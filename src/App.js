@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/login/index.jsx";
 import MusicAdmin from "./pages/admin/attentionManager/index";
 import FeedAdmin from "./pages/admin/feedManager/index";
+import MuiLogin from "./pages/login/muiLogin";
 import { keepLoginAction } from "./store/actions";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Font.css";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/MusicAdmin" element={<MusicAdmin />} />
           <Route path="/FeedAdmin" element={<FeedAdmin />} />
+          <Route path="/lo" element={<MuiLogin />} />
         </Routes>
       </Router>
     );
