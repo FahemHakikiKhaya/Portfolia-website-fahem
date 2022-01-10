@@ -9,10 +9,33 @@ import { keepLoginAction } from "./store/actions";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Font.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MuiNavbar from "./component/navigation/muiNavBar";
 
 function App() {
   const [isLocalStorageChecked, setIsLocalStorageChecked] = useState(false);
+  const [scrollState, setScrollState] = useState("top");
   const dispatch = useDispatch();
+
+  // let listener = null;
+
+  useEffect(() => {
+    const listener = document.addEventListener("scroll", (e) => {
+      var scrolled = document.scrollingElement.scrollTop;
+      if (scrolled >= 120) {
+        if (scrollState !== "amir") {
+          setScrollState("amir");
+        }
+      } else {
+        if (scrollState !== "top") {
+          setScrollState("top");
+        }
+      }
+    });
+    return () => {
+      document.removeEventListener("scroll", listener);
+      console.log(scrollState);
+    };
+  }, [scrollState]);
 
   useEffect(() => {
     const userLocalStorage = localStorage.getItem("userData");
@@ -29,12 +52,13 @@ function App() {
   if (isLocalStorageChecked) {
     return (
       <Router>
+        <MuiNavbar scrollState={scrollState} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/a" element={<Login />} />
           <Route path="/MusicAdmin" element={<MusicAdmin />} />
           <Route path="/FeedAdmin" element={<FeedAdmin />} />
-          <Route path="/lo" element={<MuiLogin />} />
+          <Route path="/Login" element={<MuiLogin />} />
         </Routes>
       </Router>
     );

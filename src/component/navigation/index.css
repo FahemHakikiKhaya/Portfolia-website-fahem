@@ -7,12 +7,14 @@
 .muiNavBar {
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 .black {
   background-color: black;
 }
 
 .muiNavBar-admin {
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 2;
 }

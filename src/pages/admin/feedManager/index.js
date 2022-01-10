@@ -110,7 +110,7 @@ function Index() {
   return (
     <div className="container">
       <div>
-        <MuiNavBar />
+        {/* <MuiNavBar /> */}
         <Header />
       </div>
       {slicedFeeds.length && (

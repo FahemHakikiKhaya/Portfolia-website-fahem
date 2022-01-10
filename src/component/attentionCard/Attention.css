@@ -11,6 +11,7 @@
   border: var(--border-setup);
   width: 384px;
   text-align: center;
+  z-index: 1;
   position: absolute;
 }
 .Attention-content {

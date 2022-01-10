@@ -18,6 +18,9 @@ import { loginAction } from "../../store/actions";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function Copyright(props) {
   return (
     <Typography
@@ -40,55 +43,36 @@ const theme = createTheme();
 
 function SignIn() {
   const dispatch = useDispatch();
+  const role = useSelector((state) => state.auth.role);
   const [Alert, setAlert] = useState(false);
-  const handleSubmit = (event) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    // console.log({
-    //   email: data.get("email"),
-    //   password: data.get("password"),
-    // });
-    axios
-      .get("/users", {
-        params: {
-          username: data.get("username"),
-          password: data.get("password"),
-        },
-      })
-      .then((res) => {
-        const { id, username, role, permission } = res.data[0];
-        loginAction({ id, username, role, dispatch });
-        setAlert(true);
-      })
-      .catch((err) => console.log({ err }));
+    setIsLoading(true);
+    setTimeout(() => {
+      axios
+        .get("/users", {
+          params: {
+            username: data.get("username"),
+            password: data.get("password"),
+          },
+        })
+        .then((res) => {
+          const { id, username, role, permission } = res.data[0];
+          loginAction({ id, username, role, dispatch });
+          setAlert(true);
+        })
+        .catch((err) => console.log({ err }));
+    }, 2000);
   };
 
-  if (Alert) {
-    return (
-      <Alert severity="success">
-        <AlertTitle>Success</AlertTitle>
-        Login successfuly
-      </Alert>
-    );
+  if (role === "Admin") {
+    return <Navigate to="/MusicAdmin" replace />;
   }
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <div>
-        <Alert severity="success">
-          <AlertTitle>Success</AlertTitle>
-          Login successfuly
-        </Alert>
-      </div> */}
-      {/* {true ? (
-        <Alert severity="success">
-          <AlertTitle>Success</AlertTitle>
-          Login successfuly
-        </Alert>
-      ) : (
-        <></>
-      )} */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -131,17 +115,14 @@ function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              {isLoading ? <CircularProgress color="secondary" /> : "Login"}
             </Button>
             <Grid container>
               <Grid item xs>

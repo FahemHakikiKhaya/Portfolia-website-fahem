@@ -60,7 +60,6 @@ function MuiNavBar({ scrollState }) {
             </Button>
             <Button
               onClick={onLogout}
-              href="/"
               variant="Text"
               size="large"
               className="Button"

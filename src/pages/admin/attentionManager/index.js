@@ -38,7 +38,7 @@ function Index() {
   return (
     <div className="container">
       <div>
-        <MuiNavBar />
+        {/* <MuiNavBar /> */}
         <Header />
       </div>
       <div className="d-flex row mx-0 ">
