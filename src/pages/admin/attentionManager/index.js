@@ -36,9 +36,8 @@ function Index() {
 
   if (role !== "Admin") return <Navigate to="/" replace />;
   return (
-    <div className="container">
+    <div className="container pt-5 mt-5">
       <div>
-        {/* <MuiNavBar /> */}
         <Header />
       </div>
       <div className="d-flex row mx-0 ">

@@ -16,18 +16,26 @@ function App() {
   const [scrollState, setScrollState] = useState("top");
   const dispatch = useDispatch();
 
-  // let listener = null;
-
   useEffect(() => {
     const listener = document.addEventListener("scroll", (e) => {
       var scrolled = document.scrollingElement.scrollTop;
       if (scrolled >= 120) {
         if (scrollState !== "amir") {
           setScrollState("amir");
+          var x = document.getElementsByClassName("transition");
+          var i;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.padding = "0px";
+          }
         }
       } else {
         if (scrollState !== "top") {
           setScrollState("top");
+          var x = document.getElementsByClassName("transition");
+          var i;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.padding = "24px";
+          }
         }
       }
     });

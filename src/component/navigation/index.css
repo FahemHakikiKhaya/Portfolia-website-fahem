@@ -12,7 +12,10 @@
 .black {
   background-color: black;
 }
-
+.transition {
+  transition: 0.4s;
+  padding: inherit;
+}
 .muiNavBar-admin {
   position: fixed;
   top: 0;

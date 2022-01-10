@@ -29,7 +29,12 @@ function MuiNavBar({ scrollState }) {
         style={{ backgroundColor: "black" }}
         className="muiNavBar-admin"
       >
-        <Stack direction="row" justifyContent="space-between" p={3}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          p={3}
+          className="transition"
+        >
           <Button
             variant="Text"
             size="large"
@@ -77,7 +82,12 @@ function MuiNavBar({ scrollState }) {
       style={{ backgroundColor: navBG }}
       className="muiNavBar"
     >
-      <Stack direction="row" justifyContent="space-between" p={3}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        p={3}
+        className="transition"
+      >
         <Button
           variant="Text"
           size="large"

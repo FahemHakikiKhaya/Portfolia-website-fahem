@@ -31,7 +31,6 @@ function Index() {
 
   return (
     <div className="home">
-      {/* <MuiNavBar scrollState={scrollState} /> */}
       <div>
         <Header />
       </div>
